@@ -1,8 +1,6 @@
 package com.ecommpet.product.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -21,5 +19,7 @@ public class Product {
     private String description;
     private double availableQuantity;
     private BigDecimal price;
+    @OneToMany
+    @JoinColumn(name = "category_id")
     private Category category;
 }
